@@ -2,18 +2,28 @@
 
 This repository serves as a living document of the network configuration, hardware specs, and self-hosted services.
 
+## Objectives
+- [ ] Learn to outsource and compare hardware, assessing value-to-dollar across different listings
+- [ ] Back-up images and videos from mobile phone
+- [ ] Provide a NAS service within the family, recover old photos from previously used HDDs
+- [ ] Estbalish remote connection to server
+- [ ] Familarise Docker and Kubernetes technologies
+- [ ] Set up monitoring capabilities for performance assessment
+- [ ] Configure back-up solutions
+- [ ] Learn cloud engineering and devops concepts such as redundancy and availability
+
 ## Project Roadmap
 Each phase represents a milestone in the lab's evolution.
 
 | Phase | Status | Description | Link |
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | ✅ Complete | Hardware Inventory & Initial Boot | [View Phase 1](./docs/phase-1-hardware.md) |
-| **Phase 2** | ⏳ Planning | Hypervisor Installation & Networking | TBD |
+| **Phase 2** | ⏳ In-Progress | Proxmox Installation & Set Up | [View Phase 2](./docs/phase-2-proxmox-installation.md) |
 | **Phase 3** | ⏳ Planning | Docker Containers & Media Stack | TBD |
 
 ## Hardware
 
-### Core Components
+This is the hardware that the server will be running on:
 
 | Component | Part / Model | Notes |
 | :--- | :--- | :--- |

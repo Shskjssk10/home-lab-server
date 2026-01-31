@@ -3,9 +3,8 @@
 ## Objectives
 - [ ] Source all components
 - [ ] Perform stress tests and verification (OCCT, CrystalDiskMark etc.)
-- [ ] Verify BIOS/UEFI settings
 
-## Sourcing
+## 1. Sourcing
 
 The objective for this build was to create a versatile, cost-effective "Powerhouse" node capable of handling a diverse learning stack. Sourcing the majority of these components was done through Carousell, specifically targeting sellers offloading mid-range gaming hardware to stay within a "value-per-dollar" sweet spot.
 
@@ -16,8 +15,8 @@ The criterias were as follows:
 * **Power:** Comes with a trustworthy and reliable power supply unit for 24/7 availability 
 
 
-## Verification & Testing
-### 1. Stability & Thermal Stress Tests
+## 2. Verification & Testing
+### 2.1 Stability & Thermal Stress Tests
 | Component | Tool Used | Duration | Results / Max Temps |
 | :--- | :--- | :--- | :--- |
 | **CPU+RAM** | **OCCT** | 1 Hour | Stable; Max CPU Temp: **72°C** |
@@ -30,11 +29,17 @@ The criterias were as follows:
 | **Storage (Boot)** | **CrystalDiskInfo** | NA | 93% Healthy |
 | **Storage (Data)** | **CrystalDiskInfo** | NA | 100% Healthy |
 
-### 2. Component Verification
+### 2.2 Component Verification
 I used the following tools to confirm that the hardware specifications matched the seller's description and that the firmware was up to date:
 * **CPU-Z:** Verified Ryzen 5 3600 clock speeds and confirmed the MSI B450 is running the latest AGESA firmware for stability.
 * **GPU-Z:** Confirmed the GTX 1060 is a genuine 6GB model and checked UEFI support for future virtualization/passthrough tasks.
 * **HWMonitor:** Logged voltage rails on the Cooler Master PSU to ensure no significant sagging under load.
+
+| Component | Tool Used | Result |
+| :--- | :--- | :--- |
+| **CPU** | **HWinfo** | True |
+| **RAM** | **HWinfo** | True |
+| **GPU** | **GPU-Z** | True |
 
 ---
 [⬅ Back to Main README](../README.md)
