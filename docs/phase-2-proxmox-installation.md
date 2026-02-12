@@ -160,6 +160,9 @@ nano /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 
 ![Screenshot of Navigating to File](../screenshot/phase-2/proxmox-setup-navigate-file.png)
 
+> [!NOTE]
+> It is recommended to make a backup copy using the command `cp proxmoxlib.js proxmoxlib.js.bak`. A copy of the file is located in the repo under the directory `/script/phase-2/proxmoxlib.js`
+
 **2. Edit the Script**
 
 Search for the phrase `No valid`. Edit the script 3 lines above to follow the following
