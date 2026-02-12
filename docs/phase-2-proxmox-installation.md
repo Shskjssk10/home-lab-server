@@ -112,9 +112,65 @@ The screen should flash the terminal with a screenshot similar to the image belo
 
 ![Screenshot of Successfuul Proxmox Installation](../screenshot/phase-2/proxmox-installation-successful.png)
 
-## 4. Setting up Proxmox Environment 
+## 4. Setting up Proxmox Environment
 
-(TBC)
+
+### 4.1 Updating Repositories
+
+**1. Navigate to Repositories**
+
+Navigate to your node and click on "Subscriptions". Next, click on "Add"
+
+![Screenshot of Navigation o Add No-Subscription Repos](../screenshot/phase-2/proxmox-setup-add-no-subscription-repo.png)
+
+
+**2. Select on No-Subscription Repositories**
+
+Repeat this step twice to select the two repositories highlighted in the screenshot below.
+
+![Screenshot of Two Required Repositories Added](../screenshot/phase-2/proxmox-setup-add-repo.png)
+
+> [!NOTE]
+> Remember to disable enterprise repositories by selecting on them and clicking 'Disable'
+
+**3. Update and Upgrade Repos**
+
+Reboot the server to refresh and enforce the changes.
+
+![Screenshot of Rebooting Server](../screenshot/phase-2/proxmox-setup-reboot.png)
+
+**4. Update and Upgrade Repos**
+
+After the server has rebooted, run the following command to update the repositories.
+
+```bash
+apt update && apt upgrade -y
+```
+
+
+### 4.2 Remove the Subscription Notice
+
+Proxmox will show a “No valid subscription” popup on login. To remove it:
+
+**1. Edit the JavaScript file responsible for the popup:**
+```bash
+nano /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+```
+
+**2. Search for the following (or similar):**
+```
+if (res === null || res === undefined || !res || res === '')
+```
+Or, search for `data.status !== 'Active'` or `No valid subscription`.
+
+**3. Comment out or remove the code block that triggers the popup.**
+
+**Alternatively, use this one-liner (for Proxmox 7.x/8.x):**
+```bash
+sed -i.bak "s/if (data.status !== 'Active') {Ext.Msg.show({/if (false) {/" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+```
+
+**4. Clear your browser cache and reload the web UI.**
 
 
 ---
