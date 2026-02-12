@@ -148,30 +148,33 @@ apt update && apt upgrade -y
 ```
 
 
-### 4.2 Remove the Subscription Notice
+### 4.2 Remove the Repository Subscription Notice
 
 Proxmox will show a “No valid subscription” popup on login. To remove it:
 
 **1. Edit the JavaScript file responsible for the popup:**
+
 ```bash
 nano /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 ```
 
-**2. Search for the following (or similar):**
-```
-if (res === null || res === undefined || !res || res === '')
-```
-Or, search for `data.status !== 'Active'` or `No valid subscription`.
+![Screenshot of Navigating to File](../screenshot/phase-2/proxmox-setup-navigate-file.png)
 
-**3. Comment out or remove the code block that triggers the popup.**
+**2. Edit the Script**
 
-**Alternatively, use this one-liner (for Proxmox 7.x/8.x):**
+Search for the phrase `No valid`. Edit the script 3 lines above to follow the following
+
 ```bash
-sed -i.bak "s/if (data.status !== 'Active') {Ext.Msg.show({/if (false) {/" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+res.data.status.toLowerCase() === 'active'
 ```
 
-**4. Clear your browser cache and reload the web UI.**
+![Screenshot of Editing Script](../screenshot/phase-2/proxmox-setup-editing-script.png)
 
+**3. Reboot server**
+
+```bash
+service pveproxy restart
+```
 
 ---
 [⬅ Back to Main README](../README.md)
