@@ -18,7 +18,7 @@ Each phase represents a milestone in the lab's evolution.
 | Phase | Status | Description | Link |
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | ✅ Complete | Hardware Inventory & Initial Boot | [View Phase 1](./docs/phase-1-hardware.md) |
-| **Phase 2** | ⏳ In-Progress | Proxmox Installation & Set Up | [View Phase 2](./docs/phase-2-proxmox-installation.md) |
+| **Phase 2** | ✅ Complete | Proxmox Installation & Set Up | [View Phase 2](./docs/phase-2-proxmox-installation.md) |
 | **Phase 3** | ⏳ Planning | Docker Containers & Media Stack | TBD |
 
 ## Hardware
