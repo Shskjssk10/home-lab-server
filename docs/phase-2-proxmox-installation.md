@@ -8,6 +8,9 @@
     - [3.2 Configure Bootable USB Stick](#32-configure-bootable-usb-stick)
     - [3.3 Booting Proxmox VE](#33-booting-proxmox-ve)
 4. [Setting Up Proxmox Environment](#4-setting-up-proxmox-environment)
+    - [4.1 Updating Repositories](#41-updating-repositories)
+    - [4.2 Remove the Repository Subscription Notice](#42-remove-the-repository-subscription-notice)
+    - [4.3 Configuring Authorised Access to Server](#43-configuring-authorised-access-to-server)
 
 ## 1. Objectives
 - [ ] Configure BIOS to optimum settings
