@@ -179,5 +179,38 @@ res.data.status.toLowerCase() === 'active'
 service pveproxy restart
 ```
 
+
+### 4.3 Configuring Authorised Access to Server
+
+It is recommended to configure security settings following a Zero-Trust security model by only authorising specific IP addresses.
+
+**1. Create an IPSet group**
+
+Create an IPset group for authorised users to access the server
+
+![Screenshot of Adding IPset Group](../screenshot/phase-2/proxmox-security-add-ipset.png)
+
+**2. Enter Details and Confirm**
+
+Enter the name and its comments. Afterwards click on 'Confirm'
+
+![Screenshot of Confirming IPset Group](../screenshot/phase-2/proxmox-security-confirm-ipset.png)
+
+**3. Add Firewall Rules**
+
+Following the screenshot, navigate to the page to beign adding firewall rules. Here you may configure such that only authorised users are allowed to access the server via authorised means.
+
+![Screenshot of Adding Firewall Rule](../screenshot/phase-2/proxmox-security-add-firewall.png)
+
+**4. Confirm Firewall Rules**
+
+The screenshot allows the authorised users to access the server via the port 8006, allowing them to access the web GUI. Repeat these steps to deny traffic accordingly from unauthorised users. 
+
+![Screenshot of Confirm Firewall Rule](../screenshot/phase-2/proxmox-security-add-webgui-access.png)
+
+> [!NOTE]
+> The order of firewall rules matters. Ensure that the `ALLOW` rules are always before `DENY` and `REJECT` rules.
+
+
 ---
 [⬅ Back to Main README](../README.md)
