@@ -35,7 +35,7 @@ main() {
     sudo apt install htop -y
     log_message "✅ Common commands installed successfully."
 
-    # Social Media Apps - Wechat, Telegram Desktop, Discord
+    # Social Media Apps - Wechat, Telegram Desktop, Discord etc. via flatpak
     log_message "⏳ Installing Wechat..."
     sudo flatpak install com.tencent.WeChat
     log_message "✅ Wechat installed successfully."
@@ -44,6 +44,23 @@ main() {
     sudo flatpak install com.telegram.TelegramDesktop
     log_message "✅ Telegram Desktop installed successfully."
 
+    log_message "⏳ Installing Discord..."
+    sudo flatpak install com.discordapp.Discord
+    log_message "✅ Discord installed successfully."
+
+    log_message "⏳ Installing Brave..."
+    sudo flatpak install com.brave.Browser
+    log_message "✅ Brave installed successfully."
+
+    # Productivity Apps - Vscode, Wireguard etc. 
+
+    log_message "⏳ Installing Wireguard..."
+    sudo apt install wireguard -y
+    log_message "✅ Wireguard installed successfully."
+
+    log_message "⏳ Installing VSCode..."
+    sudo wget -O vscode.deb "https://go.microsoft.com/fwlink/?LinkID=760868" && sudo apt install ./vscode.deb -y
+    log_message "✅ VSCode installed successfully."
 
     # # Check if source directory exists
     # if [[ ! -d "$SOURCE_DIR" ]]; then
