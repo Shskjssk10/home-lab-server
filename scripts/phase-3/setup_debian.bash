@@ -71,6 +71,10 @@ main() {
     sudo flatpak install com.brave.Browser
     log_message "✅ Brave installed successfully."
 
+    log_message "⏳ Installing Whatsie..."
+    sudo flatpak install com.ktechpit.whatsie
+    log_message "✅ Whatsie installed successfully."
+
     # Productivity Apps - Vscode, Wireguard etc. 
 
     log_message "⏳ Installing Wireguard..."
