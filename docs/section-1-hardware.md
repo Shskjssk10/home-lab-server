@@ -1,4 +1,4 @@
-# Phase 1: Hardware & Physical Setup
+# Section 1: Hardware & Physical Setup
 
 ## Objectives
 - [ ] Source all components

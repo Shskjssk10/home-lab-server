@@ -1,4 +1,4 @@
-# Phase 1: Proxmox Installation & Set Up
+# Section 2: Proxmox Installation & Set Up
 
 ## Table of Contents
 1. [Objectives](#objectives)
