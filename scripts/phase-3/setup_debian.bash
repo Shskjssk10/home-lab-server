@@ -47,6 +47,7 @@ main() {
     sudo add-apt-repository "$FASTFETCH_REPO" -y
     sudo apt update && sudo apt install fastfetch -y
     sudo apt install htop -y
+    sudo apt install speedtest-cli -y
     log_message "✅ Common commands installed successfully."
 
     log_message "⏳ Installing uv..."
