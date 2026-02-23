@@ -35,6 +35,11 @@ main() {
     sudo apt install htop -y
     log_message "✅ Common commands installed successfully."
 
+    log_message "⏳ Installing uv..."
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    source $HOME/.local/bin/env
+    log_message "✅ uv installed successfully."
+
     # Social Media Apps - Wechat, Telegram Desktop, Discord etc. via flatpak
     log_message "⏳ Installing Wechat..."
     sudo flatpak install com.tencent.WeChat
