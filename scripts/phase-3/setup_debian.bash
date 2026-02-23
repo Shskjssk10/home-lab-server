@@ -20,6 +20,20 @@ log_message() {
 # The 'trap' command runs a function if the script crashes or is interrupted.
 trap cleanup EXIT
 
+# VARIABLES
+FASTFETCH_REPO="ppa:zhangsongcui3371/fastfetch"
+UV_DOWNLOAD_URL="https://astral.sh/uv/install.sh"
+VSCODE_DOWNLOAD_URL="https://go.microsoft.com/fwlink/?LinkID=760868"
+POSTMAN_DOWNLOAD_URL="https://dl.pstmn.io/download/latest/linux_64"
+POSTMAN_DESKTOP_CONFIG="[Desktop Entry]
+Encoding=UTF-8
+Name=Postman
+Exec=/usr/local/bin/postman
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Development;"
+
 # Main function
 main() {
     log_message "⏳ Starting debian_setup.sh process..."
@@ -30,13 +44,13 @@ main() {
     log_message "✅ System update and upgrade completed successfully."
 
     log_message "⏳ Installing common commands..."
-    sudo add-apt-repository ppa:zhangsongcui3371/fastfetch -y
+    sudo add-apt-repository "$FASTFETCH_REPO" -y
     sudo apt update && sudo apt install fastfetch -y
     sudo apt install htop -y
     log_message "✅ Common commands installed successfully."
 
     log_message "⏳ Installing uv..."
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    curl -LsSf "$UV_DOWNLOAD_URL" | sh
     source $HOME/.local/bin/env
     log_message "✅ uv installed successfully."
 
@@ -64,8 +78,14 @@ main() {
     log_message "✅ Wireguard installed successfully."
 
     log_message "⏳ Installing VSCode..."
-    sudo wget -O vscode.deb "https://go.microsoft.com/fwlink/?LinkID=760868" && sudo apt install ./vscode.deb -y
+    sudo wget -O vscode.deb "$VSCODE_DOWNLOAD_URL" && sudo apt install ./vscode.deb -y
     log_message "✅ VSCode installed successfully."
+
+    log_message "⏳ Installing Postman..."
+    sudo curl -o postman.tar.gz "$POSTMAN_DOWNLOAD_URL" && tar -xzf postman.tar.gz -C /opt
+    sudo ln -s /opt/Postman/Postman /usr/local/bin/postman
+    echo "$POSTMAN_DESKTOP_CONFIG" >> ~/.local/share/applications/postman.desktop
+    log_message "✅ Postman installed successfully."
 
     # # Check if source directory exists
     # if [[ ! -d "$SOURCE_DIR" ]]; then
