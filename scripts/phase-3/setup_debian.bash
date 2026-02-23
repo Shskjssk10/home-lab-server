@@ -48,6 +48,7 @@ main() {
     sudo apt update && sudo apt install fastfetch -y
     sudo apt install htop -y
     sudo apt install speedtest-cli -y
+    sudo apt install openssh-server -y
     log_message "✅ Common commands installed successfully."
 
     log_message "⏳ Installing uv..."
