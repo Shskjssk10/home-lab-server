@@ -13,13 +13,14 @@ This repository serves as a living document of the network configuration, hardwa
 - [ ] Learn cloud engineering and devops concepts such as redundancy and availability
 
 ## Project Roadmap
-Each phase represents a milestone in the lab's evolution.
+Each section represents a milestone in the lab's evolution.
 
 | Phase | Status | Description | Link |
 | :--- | :--- | :--- | :--- |
-| **Phase 1** | ✅ Complete | Hardware Inventory & Initial Boot | [View Phase 1](./docs/phase-1-hardware.md) |
-| **Phase 2** | ✅ Complete | Proxmox Installation & Set Up | [View Phase 2](./docs/phase-2-proxmox-installation.md) |
-| **Phase 3** | ⏳ Planning | Docker Containers & Media Stack | TBD |
+| **Section 1** | ✅ Complete | Hardware Inventory & Initial Boot | [View Section 1](./docs/section-1-hardware.md) |
+| **Section 2** | ✅ Complete | Proxmox Installation & Set Up | [View Section 2](./docs/section-2-proxmox-installation.md) |
+| **Section 3** | ⏳ Planning | Hard Disks Formatting | [View Section 3](./docs/section-3-hard-disks-formatting.md) |
+| **Section 4** | ⏳ Planning | VM and CT Creation | [View Section 4](./docs/section-4-vm-and-ct-creation.md) |
 
 ## Hardware
 
